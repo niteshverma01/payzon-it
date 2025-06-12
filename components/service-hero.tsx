@@ -50,7 +50,7 @@ export function ServiceHero({
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-6xl font-bold mb-6"
           >
-            <span className={`bg-clip-text text-transparent bg-gradient-to-r from-${gradientFrom} to-${gradientTo}`}>
+            <span className={`bg-clip-text  bg-gradient-to-r from-${gradientFrom} to-${gradientTo}`}>
               {title}
             </span>
           </motion.h1>

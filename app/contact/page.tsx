@@ -127,7 +127,7 @@ export default function ContactPage() {
                 <Phone className="h-5 w-5 text-primary" />
                 <div>
                   <p className="font-medium">Phone</p>
-                  <p className="text-muted-foreground">+91 9876543210</p>
+                  <p className="text-muted-foreground"> +91 755 485 9540,+91 7554923296</p>
                 </div>
               </div>
 
@@ -135,7 +135,7 @@ export default function ContactPage() {
                 <Mail className="h-5 w-5 text-primary" />
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-muted-foreground">info@payzonit.com</p>
+                  <p className="text-muted-foreground">info@payzonindia.com</p>
                 </div>
               </div>
 
@@ -144,9 +144,9 @@ export default function ContactPage() {
                 <div>
                   <p className="font-medium">Address</p>
                   <p className="text-muted-foreground">
-                    123 Business District
+                   B1, Patel Nagar,Raisen road Near HP Petrol Pump,
                     <br />
-                    Mumbai, Maharashtra 400001
+                    Bhopal (MP) Pin: 462022
                     <br />
                     India
                   </p>

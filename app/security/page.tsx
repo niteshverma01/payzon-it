@@ -153,12 +153,7 @@ export default function SecurityPage() {
                             </Badge>
                           ))}
                         </div>
-                        <Button className="w-full bg-red-600 hover:bg-red-700 text-white group" asChild>
-                          <Link href="/contact">
-                            <span>Get Security Audit</span>
-                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                          </Link>
-                        </Button>
+                     
                       </div>
                     </CardContent>
                   </Card>

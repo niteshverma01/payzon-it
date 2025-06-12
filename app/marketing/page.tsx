@@ -146,12 +146,7 @@ export default function MarketingPage() {
                             </Badge>
                           ))}
                         </div>
-                        <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white group" asChild>
-                          <Link href="/contact">
-                            <span>Start Campaign</span>
-                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                          </Link>
-                        </Button>
+                     
                       </div>
                     </CardContent>
                   </Card>

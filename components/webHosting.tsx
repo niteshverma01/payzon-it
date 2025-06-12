@@ -28,7 +28,7 @@ interface Stat {
 }
 
 export function WebHosting() {
-  const [isOpen, setIsOpen] = React.useState(false)
+    const [isOpen, setIsOpen] = React.useState(false)
 
 
 
@@ -61,24 +61,19 @@ export function WebHosting() {
 
     return (
         <section className="min-h-screen bg-gradient-to-br from-[#210d04] via-[#210d04] to-[#210d04] relative overflow-hidden">
-            {/* Animated Background Elements */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#2a0f04] via-[#1e0a02] to-[#120602]">
-                <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
-            </div>
 
 
 
 
-            <div className="container mx-auto px-4 py-24 relative z-10">
+
+            <div className="container mx-auto px-4 py-24 relative z-10 ">
                 {/* Hero Section */}
                 <div className="text-center mb-20">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, type: "spring" }}
-                        className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full mb-8 border border-white/20"
+                        className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full mb-8 border-border/50 hover:border-primary/30"
                     >
                         <Star className="w-5 h-5 text-yellow-400" />
                         <span className="text-white/90 font-medium">Web Hosting</span>
@@ -131,7 +126,7 @@ export function WebHosting() {
                                     key={index}
                                     whileHover={{ scale: 1.02, y: -10 }}
 
-                                    className={`relative rounded-3xl p-8 border transition-all duration-300 backdrop-blur-md bg-white/10
+                                    className={`relative rounded-3xl p-8 border border-border/50 hover:border-primary/30 transition-all duration-300 bg-white/10
   ${plan.popular
                                             ? 'border-[#1e0a02] shadow-lg shadow-[#1e0a02]/25'
                                             : 'border-[#1e0a02]/20 hover:border-[#1e0a02] hover:shadow-[0_0_20px_4px_#1e0a02]'}
@@ -167,9 +162,9 @@ export function WebHosting() {
                                             : 'bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/40'
                                             }`}
                                     >
-                                      <Link href="/contact" onClick={() => setIsOpen(false)}>
-                    Get In Touch
-                  </Link>
+                                        <Link href="/contact" onClick={() => setIsOpen(false)}>
+                                            Get In Touch
+                                        </Link>
                                     </button>
                                 </motion.div>
                             )

@@ -146,12 +146,7 @@ export default function VerificationPage() {
                             </Badge>
                           ))}
                         </div>
-                        <Button className="w-full bg-green-600 hover:bg-green-700 text-white group" asChild>
-                          <Link href="/contact">
-                            <span>Get API Access</span>
-                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                          </Link>
-                        </Button>
+                      
                       </div>
                     </CardContent>
                   </Card>

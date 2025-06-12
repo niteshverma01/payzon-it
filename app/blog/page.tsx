@@ -279,16 +279,7 @@ export default function BlogPage() {
                     <div className="absolute top-4 left-4">
                       <Badge className="bg-primary text-white">{post.category}</Badge>
                     </div>
-                    <div className="absolute top-4 right-4 flex gap-2">
-                      <div className="bg-black/50 rounded-full px-2 py-1 text-xs text-white flex items-center gap-1">
-                        <Eye className="h-3 w-3" />
-                        {post.views}
-                      </div>
-                      <div className="bg-black/50 rounded-full px-2 py-1 text-xs text-white flex items-center gap-1">
-                        <Heart className="h-3 w-3" />
-                        {post.likes}
-                      </div>
-                    </div>
+                    
                   </div>
                   <CardHeader className="pb-3">
                     <h3 className="text-xl font-semibold line-clamp-2">{post.title}</h3>
@@ -350,33 +341,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="py-24">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mx-auto text-center card-simple p-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Stay <span className="">Updated</span>
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              Subscribe to our newsletter and get the latest insights, tutorials, and industry updates delivered to your
-              inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input placeholder="Enter your email" className="flex-1 card-simple" />
-              <Button className="bg-primary hover:bg-primary/90 text-white px-8">Subscribe</Button>
-            </div>
-            <p className="text-xs text-muted-foreground mt-4">
-              Join 5,000+ developers and business owners who trust our insights.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+ 
     </div>
   )
 }

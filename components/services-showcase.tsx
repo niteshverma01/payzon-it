@@ -68,6 +68,8 @@ const services = [
 export function ServicesShowcase() {
   return (
     <section id="services" className="py-24 px-12 relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,72,0,0.1),transparent_70%)]"></div>
+
       <div className="container relative z-10">
         <div className="text-center mb-16">
           <motion.div

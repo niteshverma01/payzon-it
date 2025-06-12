@@ -105,7 +105,7 @@ export function Testimonials() {
                       <div className="flex items-center space-x-3">
 
 
-                        <div className="font-semibold ">{testimonial.name}</div>
+                        <div className="font-semibold text-3xl ">{testimonial.name}</div>
 
 
                       </div>

@@ -223,38 +223,19 @@ export default function ProductsPage() {
                     </CardHeader>
                     <CardContent className="relative z-10">
                       <div className="space-y-4">
-                        <div className="flex items-center justify-between text-sm">
-                          <div className="flex items-center space-x-1">
-                            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                            <span className="font-medium">{product.rating}</span>
-                          </div>
-                          <span className="text-muted-foreground">{product.clients}</span>
-                        </div>
+                        
 
                         <div className="flex flex-wrap gap-2">
-                          {product.features.slice(0, 4).map((feature) => (
+                          {product.features.slice(0, 6).map((feature) => (
                             <Badge key={feature} variant="outline" className="text-xs">
                               {feature}
                             </Badge>
                           ))}
-                          {product.features.length > 4 && (
-                            <Badge variant="outline" className="text-xs">
-                              +{product.features.length - 4} more
-                            </Badge>
-                          )}
+                          
+                           
                         </div>
 
-                        <div className="space-y-2">
-                          <Button className="w-full bg-primary hover:bg-primary/90 text-white group" asChild>
-                            <Link href="/contact">
-                              <span>Get Started</span>
-                              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                            </Link>
-                          </Button>
-                          <Button variant="outline" className="w-full">
-                            View Demo
-                          </Button>
-                        </div>
+                
                       </div>
                     </CardContent>
                   </Card>

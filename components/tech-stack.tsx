@@ -20,6 +20,7 @@ import seo from "../public/seo.avif"
 import ppc from "../public/ppc.jpg"
 import sms from "../public/sms.png"
 import meta from "../public/meta.avif"
+import youtube from "../public/youtube.jpeg"
 
 
 
@@ -55,10 +56,18 @@ const technologies = [
   {
     title: "Meta Verified Whatsapps",
     description:
-      "Boost your brand's credibility with Meta Verification and connect directly with customers through WhatsApp Marketing—enhancing trust, engagement, and conversions with personalized messaging and verified social presence to drive business growth and audience loyalty.",
+      "Boost your brand’s credibility with Meta Verification and WhatsApp Marketing. Enhance trust, engagement, and conversions through personalized messaging and a verified presence to drive growth, customer loyalty, and digital success.",
     image: meta,
     link: "#",
   },
+   {
+    title: "Youtube Management",
+    description:
+      "Maximize your online presence with expert YouTube Management. From content planning to SEO, thumbnails, and analytics—build a loyal audience, boost engagement, and turn views into measurable business results.",
+    image: youtube,
+    link: "#",
+  },
+  
 
 ]
 

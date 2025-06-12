@@ -29,7 +29,7 @@ export function Logo({ variant = "default" }: LogoProps) {
             <span className={accentColor}>Payzon</span>
           </span>
           <span className="text-xs block -mt-1 text-muted-foreground">
-            India Pvt. Ltd.
+            India
           </span>
         </div>
       </motion.div>

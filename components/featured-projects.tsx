@@ -15,6 +15,7 @@ import gaming from "../public/gaming.jpeg"
 import grocery from "../public/grocery.jpeg"
 import ekyc from "../public/kyc.jpg"
 import webhosting from "../public/web-hosting.jpeg"
+import manymore from "../public/many-more.jpg"
 
 const projects = [
   {
@@ -73,6 +74,13 @@ const projects = [
     tags: ["Verification", "Security", "API"],
     link: "/case-studies/kyc-verification",
   },
+    {
+    title: "Many More Services",
+    description: "Comprehensive digital solutions to elevate your business, including Meta Verification, WhatsApp Marketing, SEO, Cloud, etc.",
+    image: manymore,
+    tags: ["Marketing", "Cloud Solutions", "SEO", "API"],
+    link: "/products",
+  },
 ]
 
 export function FeaturedProjects() {
@@ -130,13 +138,23 @@ export function FeaturedProjects() {
                   ></div>
 
                   <div className="absolute bottom-4 left-4 z-20">
-                    <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                    <h3 className="text-3xl text-white  font-bold ">{project.title}</h3>
                   </div>
                 </div>
                 <CardContent className="p-6">
+                  <p className={`mb-6 ${project.title === "Many More Services" ? "text-white/90" : "text-muted-foreground"}`}>
+                    {project.description}
+                  </p>
 
-                  <p className="text-muted-foreground mb-6">{project.description}</p>
-
+                  {project.title === "Many More Services" && (
+                    <div className="mt-4 flex justify-center">
+                      <Link href={project.link}>
+                        <Button className="bg-primary text-black hover:bg-black hover:text-white font-semibold px-6 py-2 rounded-full transition-colors duration-300">
+                          Explore All Services <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>

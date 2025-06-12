@@ -53,27 +53,27 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/marketing" className="text-muted-foreground hover:text-primary transition-colors">
                   Digital Marketing
                 </Link>
               </li>
               <li>
-                <Link href="/security" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/products" className="text-muted-foreground hover:text-primary transition-colors">
                   Fintech Solutions
                 </Link>
               </li>
               <li>
-                <Link href="/verification" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/web-development" className="text-muted-foreground hover:text-primary transition-colors">
                   Shopping Portal API
                 </Link>
               </li>
               <li>
-                <Link href="/marketing" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors">
                   Articles & Blogs
                 </Link>
               </li>
               <li>
-                <Link href="/marketing" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
                   Contact Details
                 </Link>
               </li>
@@ -84,32 +84,28 @@ export function Footer() {
             <h4 className="font-semibold mb-4 text-lg">TRENDING SERVICES</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/web-development" className="text-muted-foreground hover:text-primary transition-colors">
                   REST API Developments
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
                   VPS Server Hosting
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/products" className="text-muted-foreground hover:text-primary transition-colors">
                   Portal Developments
                 </Link>
               </li>
+             
               <li>
-                <Link href="/careers" className="text-muted-foreground hover:text-primary transition-colors">
-                  VPS Server Hosting
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/security" className="text-muted-foreground hover:text-primary transition-colors">
                   Web Security
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/Verification" className="text-muted-foreground hover:text-primary transition-colors">
                   Verification API
                 </Link>
               </li>
@@ -119,37 +115,37 @@ export function Footer() {
             <h4 className="font-semibold mb-4 text-lg">OUR ONLINE VERSATILITY</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="https://www.payzonindia.com/" className="text-muted-foreground hover:text-primary transition-colors">
                   www.payzonindia.com
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="https://www.payzonapi.com/" className="text-muted-foreground hover:text-primary transition-colors">
                   www.payzonapi.com
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="https://www.payzonmarketing.com/" className="text-muted-foreground hover:text-primary transition-colors">
                   www.payzonmarketing.com
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="https://www.payzonshoppy.com/" className="text-muted-foreground hover:text-primary transition-colors">
                   www.payzonshoppy.com
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="https://www.payzonitservices.com/" className="text-muted-foreground hover:text-primary transition-colors">
                   www.payzonitservices.com
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="https://www.sadaivsatya.com/" className="text-muted-foreground hover:text-primary transition-colors">
                   www.sadaivsatya.com
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="https://www.sadaivyuvafoundation.com/" className="text-muted-foreground hover:text-primary transition-colors">
                   www.sadaivyuvafoundation.com
                 </Link>
               </li>
@@ -164,11 +160,11 @@ export function Footer() {
           </h4>
 
           <div className="flex flex-wrap lg:flex-nowrap justify-center items-center gap-6 overflow-x-auto">
-            <Image src={sadaiv} alt="Sadaiv Satya" width={160} height={64} />
-            <Image src={yuva} alt="Yuva Foundation" width={120} height={64} />
-            <Image src={dun} alt="Dun Logo" width={120} height={64} />
-            <Image src={spark} alt="Spark Logo" width={120} height={64} />
-            <Image src={smart} alt="Smart Solutions" width={120} height={64} />
+          <Link href="https://www.sadaivsatya.com/">  <Image  src={sadaiv} alt="Sadaiv Satya" width={160} height={64} /> </Link>
+           <Link href="https://www.sadaivyuvafoundation.com/">   <Image src={yuva} alt="Yuva Foundation" width={120} height={64} /> </Link>
+            <Link href="https://www.dnb.com/business-directory/company-profiles.payzonindia_private_limited.b77773c8705cc49c9333a52a68281cfa.html">  <Image src={dun} alt="Dun Logo" width={120} height={64} /> </Link>
+            <Link href="https://ineffablespark.com/">  <Image src={spark} alt="Spark Logo" width={120} height={64} /> </Link>
+            <Link href="https://smarttaxidea.com/">  <Image src={smart} alt="Smart Solutions" width={120} height={64} /> </Link>
           </div>
         </div>
 
@@ -177,7 +173,7 @@ export function Footer() {
 
       </div>
 
-      <div className="w-full border-t border-border/40 py-4 px-6">
+      <div className="w-full border-t-2 border-border py-4 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-white">
 
           {/* Left Text */}

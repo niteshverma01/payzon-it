@@ -42,7 +42,7 @@ export function CTA() {
           >
             <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 rounded-full px-8 py-6">
               <Link href="/contact">
-                Get Free Consultation
+             Contact US
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -57,11 +57,11 @@ export function CTA() {
           >
             <div className="flex items-center justify-center space-x-2">
               <Phone className="h-5 w-5 text-white" />
-              <span>+91 9876543210</span>
+              <span>+91 755 485 9540,+91 7554923296</span>
             </div>
             <div className="flex items-center justify-center space-x-2">
               <Mail className="h-5 w-5 text-white" />
-              <span>info@payzonit.com</span>
+              <span>info@payzonindia.com</span>
             </div>
           </motion.div>
         </div>

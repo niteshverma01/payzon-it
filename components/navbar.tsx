@@ -1,75 +1,83 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { motion } from "framer-motion"
-import { cn } from "@/lib/utils"
-import { usePathname } from "next/navigation"
-import { Logo } from "@/components/logo"
+import * as React from "react";
+import Link from "next/link";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
+import { Logo } from "@/components/logo";
 
 const services = [
   {
     title: "Web Development",
     href: "/web-development",
     items: [
-      "Web Portal",
-      "Landing Websites",
-      "Recharge Portal",
-      "Grocery Portal",
-      "App Development",
-      "Fintech Development",
-      "Blockchain Development",
+      { label: "Web Portal", href: "/web-portal" },
+      { label: "Landing Websites", href: "/landing-page" },
+      { label: "Recharge Portal", href: "/recharge-portal" },
+      { label: "Marketing/Sales Funnel", href: "/salesMarketing" },
+      { label: "API Development", href: "/api-development" },
+      { label: "App Development", href: "#" },
+      { label: "Fintech Development", href: "#" },
+      { label: "Blockchain Development", href: "/blockchain" },
     ],
   },
   {
     title: "Our Products",
     href: "/products",
     items: [
-      "Fintech Portal",
-      "Shopping Portal",
-      "Grocery Portal",
-      "Travel Portal",
-      "Gaming Portal",
-      "eKYC Portal",
-      "Web Hosting",
+      { label: "Fintech Portal", href: "/fintech-portal" },
+      { label: "Shopping Portal", href: "/shopping-portal" },
+      { label: "Recharge Portal", href: "/productReacharge-portal" },
+      { label: "Travel Portal", href: "/travel-portal" },
+      { label: "Gaming Portal", href: "/gaming-portal" },
+      { label: "Grocery/Mart Portal", href: "/grocery-portal" },
+      { label: "eKYC Portal", href: "/kyc-portal" },
+      { label: "Web Hosting", href: "/webhosting-portal" },
     ],
   },
   {
     title: "Security & Auditing",
     href: "/security",
     items: [
-      "2FA Authentication",
-      "Website Security",
-      "Database Security",
-      "Network Security",
-      "Code Audit",
-      "DDoS Protection",
+      { label: "2FA Authentication", href: "/2fa-authentication" },
+      { label: "Website Security", href: "/websites" },
+      { label: "Database Security", href: "/database-security" },
+      { label: "Network Security", href: "/network-security" },
+      { label: "Code Audit", href: "/code-Audit" },
+      { label: "DDoS Protection", href: "/ddos" },
     ],
   },
   {
     title: "Verification Services",
     href: "/verification",
     items: [
-      "Aadhar Verification",
-      "PAN Verification",
-      "GST Verification",
-      "Bank Account Verification",
-      "Live Face Detection",
+      { label: "Aadhar Verification", href: "/adhar-verification" },
+      { label: "PAN Verification", href: "/pan-verification" },
+      { label: "GST Verification", href: "/gst-verification" },
+      { label: "Bank Account Verification", href: "/bank-verification" },
+      { label: "Live Face Detection", href: "/face-detecation" },
     ],
   },
   {
     title: "Sales & Marketing",
     href: "/marketing",
-    items: ["Paid Ad Campaigns", "SEO/SME", "Google PPC", "Bulk Email and SMS", "Meta Verified WhatsApp"],
+    items: [
+      { label: "Paid Ad Campaigns", href: "/paid-campaigns" },
+      { label: "SEO/SME", href: "/seo-sme" },
+      { label: "Google PPC", href: "/googlePpc" },
+      { label: "Bulk Email and SMS", href: "/sms" },
+      { label: "Meta Verified WhatsApp", href: "/meta" },
+    ],
   },
-]
+];
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false)
-  const pathname = usePathname()
+  const [isOpen, setIsOpen] = React.useState(false);
+  const pathname = usePathname();
 
   return (
     <motion.header
@@ -81,7 +89,8 @@ export function Navbar() {
       <div className="container flex h-16 items-center justify-between">
         <Logo />
 
-        <div className="hidden md:flex items-center space-x-1">
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center space-x-1">
           {services.map((service, index) => (
             <div key={service.title} className="relative group">
               <motion.div
@@ -92,16 +101,22 @@ export function Navbar() {
                 <Link
                   href={service.href}
                   className={cn(
-                    "px-4 py-2 text-sm font-medium relative group transition-all duration-300 rounded-lg",
+                    "px-4 py-2 text-sm font-medium relative group transition-all duration-300 rounded-lg flex items-center gap-1",
                     pathname.startsWith(service.href)
                       ? "text-primary bg-primary/10 orange-glow"
-                      : "text-foreground/80 hover:text-primary hover:bg-primary/5",
+                      : "text-foreground/80 hover:text-primary hover:bg-primary/5"
                   )}
                 >
                   {service.title}
+                  <ChevronDown
+                    className={cn(
+                      "w-4 h-4 transition-transform duration-200",
+                      "group-hover:rotate-180"
+                    )}
+                  />
                   {pathname.startsWith(service.href) && (
                     <motion.div
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full orange-glow"
+                      className="absolute bottom-0 left-0 right-0 h-0.5  rounded-full orange-glow"
                       layoutId="navbar-indicator"
                     />
                   )}
@@ -116,11 +131,11 @@ export function Navbar() {
                 >
                   {service.items.map((item) => (
                     <Link
-                      key={item}
-                      href={service.href}
+                      key={item.label}
+                      href={item.href}
                       className="block px-4 py-2 text-sm hover:bg-primary/10 hover:text-primary transition-all duration-200 rounded-lg mx-2"
                     >
-                      {item}
+                      {item.label}
                     </Link>
                   ))}
                 </motion.div>
@@ -134,7 +149,7 @@ export function Navbar() {
               "px-4 py-2 text-sm font-medium relative transition-all duration-300 rounded-lg",
               pathname === "/about"
                 ? "text-primary bg-primary/10 orange-glow"
-                : "text-foreground/80 hover:text-primary hover:bg-primary/5",
+                : "text-foreground/80 hover:text-primary hover:bg-primary/5"
             )}
           >
             About Us
@@ -152,7 +167,7 @@ export function Navbar() {
               "px-4 py-2 text-sm font-medium relative transition-all duration-300 rounded-lg",
               pathname === "/blog"
                 ? "text-primary bg-primary/10 orange-glow"
-                : "text-foreground/80 hover:text-primary hover:bg-primary/5",
+                : "text-foreground/80 hover:text-primary hover:bg-primary/5"
             )}
           >
             Blog
@@ -165,87 +180,108 @@ export function Navbar() {
           </Link>
         </div>
 
+        {/* Right section: Contact + Mobile Menu */}
         <div className="flex items-center space-x-2">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <Button asChild className="btn-primary rounded-full px-6 shadow-lg orange-glow-hover">
+            <Button
+              asChild
+              className="btn-primary rounded-full px-6 shadow-lg orange-glow-hover"
+            >
               <Link href="/contact">Get In Touch</Link>
             </Button>
           </motion.div>
 
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="md:hidden ml-2">
-              <Button variant="ghost" size="icon" className="rounded-full hover:bg-primary/10">
-                {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] dark-card border-l dark-border">
-              <div className="flex flex-col space-y-4 mt-8">
-                {services.map((service) => (
-                  <div key={service.title} className="space-y-2">
-                    <Link
-                      href={service.href}
-                      className={cn(
-                        "block text-lg font-medium transition-colors duration-200 rounded-lg p-2",
-                        pathname.startsWith(service.href)
-                          ? "text-primary bg-primary/10 orange-glow"
-                          : "text-foreground hover:text-primary hover:bg-primary/5",
-                      )}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {service.title}
-                    </Link>
-                    <div className="pl-4 space-y-1 border-l dark-border">
-                      {service.items.map((item) => (
-                        <Link
-                          key={item}
-                          href={service.href}
-                          className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 p-1 rounded"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {item}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-                <Link
-                  href="/about"
-                  className={cn(
-                    "block text-lg font-medium transition-colors duration-200 rounded-lg p-2",
-                    pathname === "/about"
-                      ? "text-primary bg-primary/10 orange-glow"
-                      : "text-foreground hover:text-primary hover:bg-primary/5",
-                  )}
-                  onClick={() => setIsOpen(false)}
+          {/* Mobile Sheet Menu - visible only below 1024px */}
+          <div className="lg:hidden">
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild className="ml-2">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full hover:bg-primary/10"
                 >
-                  About Us
-                </Link>
-                <Link
-                  href="/blog"
-                  className={cn(
-                    "block text-lg font-medium transition-colors duration-200 rounded-lg p-2",
-                    pathname === "/blog"
-                      ? "text-primary bg-primary/10 orange-glow"
-                      : "text-foreground hover:text-primary hover:bg-primary/5",
-                  )}
-                  onClick={() => setIsOpen(false)}
-                >
-                  Blog
-                </Link>
-                <Button asChild className="btn-primary w-full mt-4 rounded-full orange-glow-hover">
-                  <Link href="/contact" onClick={() => setIsOpen(false)}>
-                    Get In Touch
-                  </Link>
+                  {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                 </Button>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetTrigger>
+
+              <SheetContent
+                side="right"
+                className="w-[300px] dark-card border-l dark-border overflow-y-auto max-h-screen"
+              >
+                <div className="flex flex-col space-y-4 mt-8">
+                  {services.map((service) => (
+                    <div key={service.title} className="space-y-2">
+                      <Link
+                        href={service.href}
+                        className={cn(
+                          "block text-lg font-medium transition-colors duration-200 rounded-lg p-2",
+                          pathname.startsWith(service.href)
+                            ? "text-primary bg-primary/10 orange-glow"
+                            : "text-foreground hover:text-primary hover:bg-primary/5"
+                        )}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {service.title}
+                      </Link>
+                      <div className="pl-4 space-y-1 border-l dark-border">
+                        {service.items.map((item) => (
+                          <Link
+                            key={item.label}
+                            href={item.href}
+                            className="block text-sm text-muted-foreground hover:text-primary transition-colors duration-200 p-1 rounded"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+
+                  <Link
+                    href="/about"
+                    className={cn(
+                      "block text-lg font-medium transition-colors duration-200 rounded-lg p-2",
+                      pathname === "/about"
+                        ? "text-primary bg-primary/10 orange-glow"
+                        : "text-foreground hover:text-primary hover:bg-primary/5"
+                    )}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    About Us
+                  </Link>
+
+                  <Link
+                    href="/blog"
+                    className={cn(
+                      "block text-lg font-medium transition-colors duration-200 rounded-lg p-2",
+                      pathname === "/blog"
+                        ? "text-primary bg-primary/10 orange-glow"
+                        : "text-foreground hover:text-primary hover:bg-primary/5"
+                    )}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Blog
+                  </Link>
+
+                  <Button
+                    asChild
+                    className="btn-primary w-full mt-4 rounded-full orange-glow-hover"
+                  >
+                    <Link href="/contact" onClick={() => setIsOpen(false)}>
+                      Get In Touch
+                    </Link>
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </motion.header>
-  )
+  );
 }
